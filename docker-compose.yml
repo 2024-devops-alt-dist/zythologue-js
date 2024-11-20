@@ -10,3 +10,9 @@ services:
     ports:
       - "5432:5432"
 
+    volumes:
+          - PostgreSQLdb:/var/lib/postgresql/data # Stockage des données
+          - ./db-scripts:/docker-entrypoint-initdb.d/ # Chemin des scripts SQL pour l'initialisation de la base de données
+
+volumes:
+  PostgreSQLdb:

@@ -1,0 +1,16 @@
+# Zythologue, une base de données pour amateurs de bières
+
+## Un projet utilisant Docker, Postgresql et DBeaver
+
+Pour lancer le projet en local, il faut avoir installé Docker (et Docker Desktop). Dans VS Code, dans le dossier du projet, utiliser la commande "docker compose up". 
+
+Si ce n'est pas déjà fait, configurer le mot de passe, le nom d'utilisateur et le nom de la base de données dans DBeaver (ou dans un autre logiciel similaire) d'après les infodmations du docker-compose.yml.
+
+## Documents sur la méthode MERISE
+
+- Dictionnaire de données et règles de gestion : https://docs.google.com/spreadsheets/d/1HoxHClDUAwwVPahSalJrS0S1PYmNppsXQaiHIV4uIVw/edit?usp=sharing
+- Schémas du MCD, MLD et MPD : en format png à la racine du projet
+
+## Requêtes sql
+
+Les différentes requêtes sql demandées par le cahier des charges se trouvent dans le fichier queries.sql
