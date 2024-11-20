@@ -66,3 +66,5 @@ WHERE id = 1;
 -- Supprimer les photos d'une bière en particulier.
 DELETE FROM photo
 WHERE id_beer = 3;
+
+
