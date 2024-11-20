@@ -1,0 +1,12 @@
+# Use postgres/example user/password credentials
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_USER=myuser
+      - POSTGRES_PASSWORD=mypassword123
+      - POSTGRES_DB=myappdb
+    ports:
+      - "5432:5432"
+
