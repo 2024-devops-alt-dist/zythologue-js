@@ -18,12 +18,12 @@ group by u.id ;
 
 -- Ajouter une nouvelle bière à la base de données.
 INSERT INTO beer (name, description, abv, id_brewery, id_category) VALUES
-('La Goudale', 'It is round in mouth and slightly bitter, the wheat gives it a touch of acidity and the malt some bitterness. The final result is very pleasant, it is a beer to be savored.', 8, 3, 2),
+('La Goudale', 'It is round in mouth and slightly bitter, the wheat gives it a touch of acidity and the malt some bitterness. The final result is very pleasant, it is a beer to be savored.', 8, 3, 2);
 
 -- Afficher les bières et leurs brasseries, ordonnées par pays de la brasserie.
 select * FROM beer 
 left join brewery ON brewery.id = beer.id_brewery 
- BY brewery.country ;
+ORDER BY brewery.country ;
 
 
 -- Lister les bières avec leurs ingrédients.
@@ -49,8 +49,7 @@ left join favorite f on f.id_beer = b.id
 left join "user" u on f.id_user = u.id 
 where u.id = 1 or u.id = 2
 group by b.id 
-having count(*) > 1
-;
+having count(*) > 1;
 
 -- Afficher les brasseries dont les bières ont une moyenne de notes supérieure à une certaine valeur.
 select brewery.*, AVG(review.rating) FROM review 
@@ -68,3 +67,7 @@ DELETE FROM photo
 WHERE id_beer = 3;
 
 
+-- Tester la procédure review_beer().
+CALL review_beer(5, 1, 1);
+
+CALL review_beer(2, 1, 1);
